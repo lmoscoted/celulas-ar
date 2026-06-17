@@ -2,19 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>AR - Clase Bíblica</title>
   
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
   
   <style>
-    /* Estilos para que el visor ocupe toda la pantalla del celular */
-    body { margin: 0; padding: 0; background-color: #ffffff; overflow: hidden; font-family: sans-serif; }
-    model-viewer { width: 100vw; height: 100vh; }
+    /* Ajuste para evitar que la barra del navegador tape el visor */
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #ffffff; font-family: sans-serif; }
+    model-viewer { width: 100%; height: 100%; }
     
-    /* Estilo del botón que activa la cámara */
+    /* Botón más arriba (bottom: 80px en lugar de 30px) */
     .ar-button { 
-      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); 
+      position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); 
       padding: 14px 24px; background-color: #212121; color: white; 
       border: none; border-radius: 8px; font-size: 16px; font-weight: bold;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3); cursor: pointer;
@@ -27,6 +27,7 @@
     src="the_ark_of_the_covenant.glb" 
     ar 
     ar-modes="webxr scene-viewer quick-look" 
+    ar-scale="auto"
     camera-controls 
     shadow-intensity="1"
     environment-image="neutral"
